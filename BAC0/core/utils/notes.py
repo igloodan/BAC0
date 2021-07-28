@@ -188,40 +188,40 @@ def note_and_log(cls):
     cls._log.setLevel(logging.DEBUG)
 
     # Console Handler
-    ch = logging.StreamHandler(sys.stderr)
-    ch.set_name("stderr")
-    ch.setLevel(logging.CRITICAL)
+    #ch = logging.StreamHandler(sys.stderr)
+    #ch.set_name("stderr")
+    #ch.setLevel(logging.CRITICAL)
 
-    ch2 = logging.StreamHandler(sys.stdout)
-    ch2.set_name("stdout")
-    ch2.setLevel(console_level)
+    #ch2 = logging.StreamHandler(sys.stdout)
+    #ch2.set_name("stdout")
+    #ch2.setLevel(console_level)
 
-    formatter = logging.Formatter("{asctime} - {levelname:<8}| {message}", style="{")
+    #formatter = logging.Formatter("{asctime} - {levelname:<8}| {message}", style="{")
 
     # File Handler
-    _PERMISSION_TO_WRITE = True
-    logUserPath = expanduser("~")
-    logSaveFilePath = join(logUserPath, ".BAC0")
+    #_PERMISSION_TO_WRITE = True
+    #logUserPath = expanduser("~")
+    #logSaveFilePath = join(logUserPath, ".BAC0")
 
-    logFile = join(logSaveFilePath, "BAC0.log")
-    if not os.path.exists(logSaveFilePath):
-        try:
-            os.makedirs(logSaveFilePath)
-        except:
-            _PERMISSION_TO_WRITE = False
-    if _PERMISSION_TO_WRITE:
-        fh = FileHandler(logFile)
-        fh.set_name("file_handler")
-        fh.setLevel(file_level)
-        fh.setFormatter(formatter)
+    #logFile = join(logSaveFilePath, "BAC0.log")
+    #if not os.path.exists(logSaveFilePath):
+    #    try:
+    #        os.makedirs(logSaveFilePath)
+    #    except:
+    #        _PERMISSION_TO_WRITE = False
+    #if _PERMISSION_TO_WRITE:
+    #    fh = FileHandler(logFile)
+    #    fh.set_name("file_handler")
+    #    fh.setLevel(file_level)
+    #    fh.setFormatter(formatter)
 
-    ch.setFormatter(formatter)
-    ch2.setFormatter(formatter)
+    #ch.setFormatter(formatter)
+    #ch2.setFormatter(formatter)
     # Add handlers the first time only...
-    if not len(cls._log.handlers):
-        if _PERMISSION_TO_WRITE:
-            cls._log.addHandler(fh)
-        cls._log.addHandler(ch)
+    #if not len(cls._log.handlers):
+    #    if _PERMISSION_TO_WRITE:
+    #        cls._log.addHandler(fh)
+    #    cls._log.addHandler(ch)
         cls._log.addHandler(ch2)
 
     LogList.LOGGERS.append(cls._log)
