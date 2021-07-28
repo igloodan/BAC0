@@ -85,7 +85,7 @@ def update_log_level(
     update_stdout_lvl = False
 
     if level:
-        logging.getLogger("BAC0_Root.BAC0.scripts.Base.Base").disabled = False
+        logging.getLogger(__name__).disabled = False
         if level.lower() == "silence":
             log_file_lvl = logging.CRITICAL
             stderr_lvl = logging.CRITICAL
@@ -93,7 +93,7 @@ def update_log_level(
             update_log_file_lvl = True
             update_stderr_lvl = True
             update_stdout_lvl = True
-            logging.getLogger("BAC0_Root.BAC0.scripts.Base.Base").disabled = True
+            logging.getLogger(__name__).disabled = True
         elif level.lower() == "default":
             log_file_lvl = logging.WARNING
             stderr_lvl = logging.CRITICAL
@@ -126,7 +126,7 @@ def update_log_level(
 
     # Choose Base as logger for this task
     if log_this:
-        BAC0_logger = logging.getLogger("BAC0_Root.BAC0.scripts.Base.Base")
+        BAC0_logger = logging.getLogger(__name__)
 
     for each in LogList.LOGGERS:
         for handler in each.handlers:
@@ -182,7 +182,7 @@ def note_and_log(cls):
 
     # Defining log object
     cls.logname = "{} | {}".format(cls.__module__, cls.__name__)
-    cls._log = logging.getLogger("BAC0_Root.{}.{}".format(cls.__module__, cls.__name__))
+    cls._log = logging.getLogger(__name__)
 
     # Set level to debug so filter is done by handler
     cls._log.setLevel(logging.DEBUG)
