@@ -182,7 +182,7 @@ def note_and_log(cls):
 
     # Defining log object
     cls.logname = "{}.{}".format(cls.__module__, cls.__name__)
-    cls._log = logging.getLogger(__name__)
+    cls._log = logging.getLogger(cls.__module__ + "." + cls.__name__)
 
     # Set level to debug so filter is done by handler
     cls._log.setLevel(logging.DEBUG)
