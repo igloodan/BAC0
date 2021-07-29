@@ -226,7 +226,7 @@ def note_and_log(cls):
 
     #LogList.LOGGERS.append(cls._log)
 
-    #def log_title(self, title, args=None, width=35):
+    def log_title(self, title, args=None, width=35):
     #    cls._log.debug("")
     #    cls._log.debug("#" * width)
     #    cls._log.debug("# {}".format(title))
@@ -235,7 +235,7 @@ def note_and_log(cls):
     #        cls._log.debug("{!r}".format(args))
     #        cls._log.debug("#" * 35)
 
-    #def log_subtitle(self, subtitle, args=None, width=35):
+    def log_subtitle(self, subtitle, args=None, width=35):
     #    cls._log.debug("")
     #    cls._log.debug("=" * width)
     #    cls._log.debug("{}".format(subtitle))
@@ -248,10 +248,10 @@ def note_and_log(cls):
         """
         Add a log entry...no note
         """
-        if not note:
-            raise ValueError("Provide something to log")
-        note = "{} | {}".format(cls.logname, note)
-        cls._log.log(level, note)
+    #    if not note:
+    #        raise ValueError("Provide something to log")
+    #    note = "{} | {}".format(cls.logname, note)
+    #    cls._log.log(level, note)
 
     def note(self, note, *, level=logging.INFO, log=True):
         """
@@ -261,13 +261,13 @@ def note_and_log(cls):
         :param level: (logging.level)
         :param log: (boolean) Enable or disable logging of note
         """
-        if not note:
-            raise ValueError("Provide something to log")
-        note = "{} | {}".format(cls.logname, note)
-        cls._notes.timestamp.append(datetime.now())
-        cls._notes.notes.append(note)
-        if log:
-            cls.log(level, note)
+    #    if not note:
+    #        raise ValueError("Provide something to log")
+    #   note = "{} | {}".format(cls.logname, note)
+    #    cls._notes.timestamp.append(datetime.now())
+    #    cls._notes.notes.append(note)
+    #    if log:
+    #        cls.log(level, note)
 
     @property
     def notes(self):
