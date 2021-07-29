@@ -234,6 +234,7 @@ def note_and_log(cls):
     #    if args:
     #        cls._log.debug("{!r}".format(args))
     #        cls._log.debug("#" * 35)
+        pass
 
     def log_subtitle(self, subtitle, args=None, width=35):
     #    cls._log.debug("")
@@ -243,6 +244,7 @@ def note_and_log(cls):
     #    if args:
     #        cls._log.debug("{!r}".format(args))
     #        cls._log.debug("=" * width)
+        pass
 
     def log(self, note, *, level=logging.DEBUG):
         """
@@ -252,6 +254,7 @@ def note_and_log(cls):
     #        raise ValueError("Provide something to log")
     #    note = "{} | {}".format(cls.logname, note)
     #    cls._log.log(level, note)
+        pass
 
     def note(self, note, *, level=logging.INFO, log=True):
         """
@@ -267,7 +270,8 @@ def note_and_log(cls):
     #    cls._notes.timestamp.append(datetime.now())
     #    cls._notes.notes.append(note)
     #    if log:
-    #        cls.log(level, note)
+    #        cls.log(level, note)]
+        pass
 
     @property
     def notes(self):
