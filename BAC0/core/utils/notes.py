@@ -221,7 +221,7 @@ def note_and_log(cls):
     if not len(cls._log.handlers):
         if _PERMISSION_TO_WRITE:
             cls._log.addHandler(fh)
-        cls._log.addHandler(ch)
+        #cls._log.addHandler(ch)
         cls._log.addHandler(ch2)
 
     LogList.LOGGERS.append(cls._log)
