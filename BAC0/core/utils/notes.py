@@ -196,7 +196,7 @@ def note_and_log(cls):
     ch2.set_name("stdout")
     ch2.setLevel(console_level)
 
-    formatter = logging.Formatter("{asctime} - {levelname:<8}| {message}", style="{")
+    formatter = logging.Formatter("BAC0! {asctime} - {levelname:<8} | {name}  {message}", style="{")
 
     # File Handler
     _PERMISSION_TO_WRITE = True
