@@ -85,7 +85,7 @@ def update_log_level(
     update_stdout_lvl = False
 
     if level:
-        logging.getLogger(__name__).disabled = False
+        #logging.getLogger(__name__).disabled = False
         if level.lower() == "silence":
             log_file_lvl = logging.CRITICAL
             stderr_lvl = logging.CRITICAL
@@ -93,7 +93,7 @@ def update_log_level(
             update_log_file_lvl = True
             update_stderr_lvl = True
             update_stdout_lvl = True
-            logging.getLogger(__name__).disabled = True
+            #logging.getLogger(__name__).disabled = True
         elif level.lower() == "default":
             log_file_lvl = logging.WARNING
             stderr_lvl = logging.CRITICAL
